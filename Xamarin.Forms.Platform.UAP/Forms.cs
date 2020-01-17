@@ -30,7 +30,7 @@ namespace Xamarin.Forms
 			var accent = (SolidColorBrush)Windows.UI.Xaml.Application.Current.Resources["SystemColorControlAccentBrush"];
 			Color.SetAccent(accent.ToFormsColor());
 
-			Log.Listeners.Add(new DelegateLogListener((c, m) => Debug.WriteLine(LogFormat, c, m)));
+			Log.Listeners.Add(new DelegateLogListener((c, m) => System.Diagnostics.Trace.WriteLine(m, c)));
 
 			Windows.UI.Xaml.Application.Current.Resources.MergedDictionaries.Add(GetTabletResources());
 
